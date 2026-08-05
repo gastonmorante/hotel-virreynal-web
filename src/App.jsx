@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import ChatConcierge from './components/ChatConcierge';
 import { Bed, MapPin, Image, Calendar, Phone, Mail, Clock } from 'lucide-react';
 
 export default function App() {
@@ -167,6 +168,9 @@ export default function App() {
           © {new Date().getFullYear()} Hotel Virreynal. Todos los derechos reservados.
         </div>
       </footer>
+
+      {/* Floating AI Concierge Widget */}
+      <ChatConcierge />
     </div>
   );
 }
