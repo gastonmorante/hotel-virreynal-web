@@ -22,6 +22,15 @@ export default function Hero() {
 
       {/* Hero Main Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-28 pb-20 flex flex-col items-center">
+        {/* Official Hotel Logo */}
+        <div className="mb-6 animate-in fade-in zoom-in-95 duration-1000">
+          <img
+            src="/images/logo.png"
+            alt="Hotel Virreynal Córdoba"
+            className="w-48 sm:w-64 md:w-72 h-auto object-contain filter brightness-0 invert drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+          />
+        </div>
+
         {/* Pueblo Mágico Badge */}
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-8 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700">
           <MapPin className="w-4 h-4 text-primary animate-bounce" />

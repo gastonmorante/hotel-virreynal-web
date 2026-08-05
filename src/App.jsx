@@ -3,11 +3,15 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import VirtualTour from './sections/VirtualTour';
 import ChatConcierge from './components/ChatConcierge';
+import IntroLoader from './components/IntroLoader';
 import { Bed, MapPin, Image, Calendar, Phone, Mail, Clock } from 'lucide-react';
 
 export default function App() {
   return (
     <div className="min-h-screen bg-background text-charcoal font-sans selection:bg-primary/20 selection:text-primary">
+      {/* Minimalist Intro Loader */}
+      <IntroLoader />
+
       {/* Navigation Header */}
       <Navbar />
 
@@ -133,9 +137,11 @@ export default function App() {
       <footer className="bg-[#231812] text-white/70 py-12 px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <span className="font-serif text-2xl text-white tracking-widest uppercase block mb-3">
-              Virreynal
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="Hotel Virreynal Logo"
+              className="h-12 w-auto object-contain filter brightness-0 invert mb-3"
+            />
             <p className="text-xs leading-relaxed text-white/60">
               Hotel Virreynal • Córdoba, Veracruz.<br />
               Hospitalidad colonial con el máximo confort contemporáneo.

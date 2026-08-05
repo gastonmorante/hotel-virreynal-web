@@ -36,32 +36,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3 group">
-            <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 ${
+          <a href="#inicio" className="flex items-center gap-3 group py-1">
+            <img
+              src="/images/logo.png"
+              alt="Hotel Virreynal Logo"
+              className={`h-10 sm:h-12 w-auto object-contain transition-all duration-300 ${
                 isScrolled
-                  ? 'border-primary/40 bg-primary/10 text-primary'
-                  : 'border-white/40 bg-white/10 text-white group-hover:bg-white/20'
+                  ? 'filter brightness-90 hover:scale-105'
+                  : 'filter brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] hover:scale-105'
               }`}
-            >
-              <span className="font-serif font-bold text-xl tracking-wider">V</span>
-            </div>
-            <div className="flex flex-col">
-              <span
-                className={`font-serif text-xl sm:text-2xl tracking-widest uppercase font-semibold leading-none ${
-                  isScrolled ? 'text-secondary' : 'text-white'
-                }`}
-              >
-                Virreynal
-              </span>
-              <span
-                className={`text-[10px] tracking-[0.25em] uppercase font-light mt-0.5 ${
-                  isScrolled ? 'text-accent' : 'text-white/80'
-                }`}
-              >
-                Hotel & Suites • Córdoba
-              </span>
-            </div>
+            />
           </a>
 
           {/* Desktop Navigation Links */}
