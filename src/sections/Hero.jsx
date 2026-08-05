@@ -1,22 +1,26 @@
-import React from 'react';
-import { MapPin, ChevronDown, Compass, Award, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, ChevronDown, Compass, Star, Play, X } from 'lucide-react';
 
 export default function Hero() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const videoId = "UpxqAN2ofLY";
+
   return (
     <section id="inicio" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-secondary">
-      {/* Background Image Container with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-bg.jpg"
-          alt="Hotel Virreynal Córdoba Veracruz"
-          className="w-full h-full object-cover object-center scale-105 animate-pulse duration-10000 filter brightness-90"
+      {/* YouTube Video Background Container */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <iframe
+          className="w-full h-full min-w-[100vw] min-h-[56.25vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125 filter brightness-75 contrast-110 pointer-events-none"
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&autohide=1&modestbranding=1&enablejsapi=1`}
+          title="Video Corporativo Hotel Virreynal"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
-        {/* Gradients for text contrast */}
+        {/* Overlay Gradients for Legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
       </div>
 
-      {/* Hero Content */}
+      {/* Hero Main Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-28 pb-20 flex flex-col items-center">
         {/* Pueblo Mágico Badge */}
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-8 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -36,7 +40,7 @@ export default function Hero() {
           Una experiencia de hospitalidad distinguida en el corazón histórico de Córdoba. Elegancia atemporal, paz interior y servicio excepcional.
         </p>
 
-        {/* Call to Action Buttons */}
+        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <a
             href="#habitaciones"
@@ -46,13 +50,16 @@ export default function Hero() {
             <Star className="w-4 h-4 fill-white group-hover:rotate-45 transition-transform duration-300" />
           </a>
 
-          <a
-            href="#cordoba"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full text-sm font-medium tracking-wider hover:border-white/60 transition-all duration-300"
+          {/* Video Play Button */}
+          <button
+            onClick={() => setIsVideoModalOpen(true)}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full text-sm font-medium tracking-wider hover:border-white/60 transition-all duration-300 group"
           >
-            <Compass className="w-4 h-4 text-accent" />
-            <span>Descubre Córdoba</span>
-          </a>
+            <div className="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center shadow group-hover:scale-110 transition-transform">
+              <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
+            </div>
+            <span>Ver Video Corporativo</span>
+          </button>
         </div>
 
         {/* Bottom Feature Badges */}
@@ -85,6 +92,37 @@ export default function Hero() {
         <span className="text-[10px] tracking-[0.2em] uppercase font-light">Explorar</span>
         <ChevronDown className="w-5 h-5 animate-bounce text-primary" />
       </a>
+
+      {/* Video Modal Popup */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-300">
+          <div className="relative w-full max-w-4xl bg-secondary rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 bg-secondary text-white border-b border-white/10">
+              <h3 className="font-serif text-lg font-semibold tracking-wide">
+                Video Corporativo • Hotel Virreynal
+              </h3>
+              <button
+                onClick={() => setIsVideoModalOpen(false)}
+                className="p-2 rounded-full hover:bg-white/10 text-white/80 hover:text-white transition-colors"
+                aria-label="Cerrar video"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            {/* Modal Video Embed */}
+            <div className="relative w-full aspect-video bg-black">
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                title="Video Corporativo Hotel Virreynal"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

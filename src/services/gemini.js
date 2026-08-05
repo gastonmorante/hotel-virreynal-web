@@ -28,6 +28,7 @@ Información sobre el Hotel Virreynal:
   2. Habitación Colonial Doble ($1,850 MXN/noche): Dos camas Queen, ambiente espacioso ideal para familias o grupos.
   3. Habitación Ejecutiva ($1,450 MXN/noche): Cama Queen, escritorio de trabajo ergonómico y máxima tranquilidad.
 - Servicios & Amenidades: Café gourmet cordobés de las Altas Montañas de Veracruz en cortesía, Wi-Fi de alta velocidad en todo el inmueble, estacionamiento privado, recepción 24/7 y servicio a la habitación.
+- Video Corporativo Oficial: Disponible en la portada del sitio web o en YouTube (https://youtu.be/UpxqAN2ofLY).
 - Experiencias Locales: Recomendaciones de la ruta del café, visitas a la Ex-Hacienda de Toxpan, gastronomía típica en los Portales (pambazos cordobeses, picadas, café de olla) y recorridos por el Centro Histórico.
 
 Instrucciones de Respuesta:
