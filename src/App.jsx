@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import VirtualTour from './sections/VirtualTour';
 import ChatConcierge from './components/ChatConcierge';
 import { Bed, MapPin, Image, Calendar, Phone, Mail, Clock } from 'lucide-react';
 
@@ -87,6 +88,9 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {/* Section: Tour Virtual 360° */}
+        <VirtualTour />
 
         {/* Section Preview: Córdoba */}
         <section id="cordoba" className="py-24 bg-secondary text-background px-6">
