@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import ChatConcierge from './components/ChatConcierge';
 import IntroLoader from './components/IntroLoader';
-import { Bed, MapPin, Image, Calendar, Phone, Mail, Clock } from 'lucide-react';
+import TourismModal from './components/TourismModal';
+import { MapPin, Phone, Mail, Compass, Star } from 'lucide-react';
 
 export default function App() {
+  const [isTourismModalOpen, setIsTourismModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-charcoal font-sans selection:bg-primary/20 selection:text-primary">
       {/* Minimalist Intro Loader */}
@@ -109,21 +112,27 @@ export default function App() {
                 Hospedándote en el Hotel Virreynal, estarás a unos pasos de la emblemática Plaza de Armas, la Catedral de la Inmaculada Concepción y las más exclusivas barras de café cordobés.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="#reservar"
-                  className="bg-primary hover:bg-[#a64b31] text-white px-6 py-3 rounded-full text-xs uppercase tracking-widest font-semibold transition-all shadow-md"
+                <button
+                  onClick={() => setIsTourismModalOpen(true)}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-[#a64b31] text-white px-7 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
                 >
-                  Planea tu Visita
-                </a>
+                  <Compass className="w-4 h-4 text-white" />
+                  <span>Planea tu Visita</span>
+                </button>
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group">
+            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group cursor-pointer" onClick={() => setIsTourismModalOpen(true)}>
               <img
                 src="/images/cbafoto1.jpg"
                 alt="Catedral de la Inmaculada Concepción, Córdoba Veracruz"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
+                <span className="bg-white/90 text-secondary text-xs uppercase tracking-widest font-semibold px-4 py-2 rounded-full shadow-lg">
+                  Ver Guía de Atractivos 🗺️
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -166,7 +175,7 @@ export default function App() {
               <a href="#inicio" className="hover:text-primary transition-colors">Inicio</a>
               <a href="#habitaciones" className="hover:text-primary transition-colors">Habitaciones</a>
               <a href="#cordoba" className="hover:text-primary transition-colors">Córdoba Pueblo Mágico</a>
-              <a href="#reservar" className="hover:text-primary transition-colors">Reservaciones</a>
+              <button onClick={() => setIsTourismModalOpen(true)} className="text-left hover:text-primary transition-colors">Guía Turística</button>
             </div>
           </div>
         </div>
@@ -177,6 +186,12 @@ export default function App() {
 
       {/* Floating AI Concierge Widget */}
       <ChatConcierge />
+
+      {/* Interactive Tourism Modal */}
+      <TourismModal
+        isOpen={isTourismModalOpen}
+        onClose={() => setIsTourismModalOpen(false)}
+      />
     </div>
   );
 }
