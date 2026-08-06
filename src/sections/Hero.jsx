@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Hero Main Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-28 pb-20 flex flex-col items-center">
         {/* Official Hotel Logo */}
-        <div className="mb-6 animate-in fade-in zoom-in-95 duration-1000">
+        <div className="mb-4 animate-in fade-in zoom-in-95 duration-1000">
           <img
             src="/images/logo.png"
             alt="Hotel Virreynal Córdoba"
@@ -31,22 +31,13 @@ export default function Hero() {
           />
         </div>
 
-        {/* Pueblo Mágico Official Logo Badge */}
-        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-lg border border-white/30 text-white shadow-2xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 hover:bg-white/20 transition-all cursor-default">
+        {/* Pueblo Mágico Standalone Logo (Centered below Virreynal logo) */}
+        <div className="mb-8 flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <img
             src="/images/pueblo-magico.png"
-            alt="Córdoba Pueblo Mágico Logo"
-            className="h-8 sm:h-10 md:h-11 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
+            alt="Córdoba Pueblo Mágico"
+            className="h-14 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.85)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] hover:scale-105 transition-transform duration-300"
           />
-          <span className="h-5 w-[1px] bg-white/30" />
-          <div className="flex flex-col text-left">
-            <span className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-white leading-none">
-              Pueblo Mágico
-            </span>
-            <span className="text-[9px] sm:text-[10px] text-white/80 uppercase tracking-widest font-light mt-0.5">
-              Córdoba, Veracruz
-            </span>
-          </div>
         </div>
 
         {/* Main Title in Serif */}
@@ -77,7 +68,7 @@ export default function Hero() {
             <div className="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center shadow group-hover:scale-110 transition-transform">
               <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
             </div>
-            <span>Ver Video Corporativo</span>
+            <span>Conoce nuestro hotel</span>
           </button>
         </div>
 
