@@ -29,7 +29,7 @@ export default function App() {
       desc: 'Espectacular balcón privado con vista panorámica a la Catedral de Córdoba y Plaza de Armas, cama King Size y acabados coloniales de lujo.',
       price: '$2,450',
       badge: 'Balcón Panorámico',
-      image: '/images/hero-bg.jpg',
+      image: '/images/balconroom.jpg',
     },
     {
       title: 'Habitación Familiar Pet Friendly',
@@ -37,7 +37,7 @@ export default function App() {
       desc: 'Amplia suite diseñada para el descanso familiar y la comodidad de tu mascota. Dos camas Queen y espacios integrales adaptados.',
       price: '$1,950',
       badge: 'Pet Friendly',
-      image: '/images/cbafoto1.jpg',
+      image: '/images/petroom.jpg',
     },
     {
       title: 'Master Suite',
@@ -45,7 +45,7 @@ export default function App() {
       desc: 'Máxima distinción virreinal. Cama King Size, área de estar ejecutiva, acabados artesanales y amenidades gourmet de cortesía.',
       price: '$2,850',
       badge: 'Máximo Lujo',
-      image: '/images/hero-bg.jpg',
+      image: '/images/masteroom.jpg',
     },
   ];
 
