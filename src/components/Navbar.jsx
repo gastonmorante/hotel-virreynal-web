@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: 'Habitaciones', href: '#habitaciones' },
     { name: 'Tour 360°', href: '#tour-virtual' },
     { name: 'Córdoba', href: '#cordoba' },
+    { name: 'Reseñas', href: '#reseñas' },
   ];
 
   return (
