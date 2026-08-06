@@ -41,11 +41,11 @@ export default function App() {
       image: '/images/petroom.jpg',
     },
     {
-      title: 'Master Suite',
-      tourId: 'xZnK_3zrK',
-      desc: 'Máxima distinción virreinal. Cama King Size, área de estar ejecutiva, acabados artesanales y amenidades gourmet de cortesía.',
-      price: '$2,850',
-      badge: 'Máximo Lujo',
+      title: 'Habitación Doble',
+      tourId: '_XSvbkrFy',
+      desc: 'Confortable y espaciosa habitación equipada con dos camas matrimoniales/queen, acabados artesanales y máxima tranquilidad.',
+      price: '$1,850',
+      badge: 'Dos Camas',
       image: '/images/masteroom.jpg',
     },
   ];

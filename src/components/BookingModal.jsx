@@ -128,7 +128,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Habitaci�
             >
               <option value="Habitación Balcón">Habitación Balcón ($2,450 / noche)</option>
               <option value="Habitación Familiar Pet Friendly">Habitación Familiar Pet Friendly ($1,950 / noche)</option>
-              <option value="Master Suite">Master Suite ($2,850 / noche)</option>
+              <option value="Habitación Doble">Habitación Doble ($1,850 / noche)</option>
               <option value="Cualquier Habitación Disponible">Cualquier Habitación Disponible</option>
             </select>
           </div>

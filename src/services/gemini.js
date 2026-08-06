@@ -30,7 +30,7 @@ Información Oficial sobre Hotel Virreynal:
 - Opciones de Hospedaje:
   1. Habitación Balcón ($2,450 MXN/noche): Cama King Size, balcón privado con vista panorámica a la catedral y centro histórico, acabados en maderas nobles.
   2. Habitación Familiar Pet Friendly ($1,950 MXN/noche): Dos camas Queen, ambiente espacioso diseñado para la familia y la comodidad de tu mascota.
-  3. Master Suite ($2,850 MXN/noche): Cama King Size, área de estar ejecutiva, acabados artesanales y amenidades premium.
+  3. Habitación Doble ($1,850 MXN/noche): Dos camas matrimoniales/queen, acabados artesanales y máxima tranquilidad.
 - Servicios & Amenidades: Café gourmet de cortesía, Wi-Fi de alta velocidad en todo el inmueble, estacionamiento privado, atención a viajes de negocios o placer, recepción 24/7 y servicio a la habitación.
 - Video Corporativo Oficial: Disponible directamente en la portada del sitio web ("Conoce nuestro hotel").
 - Tour Virtual 360°: Disponible de forma inmersiva para cada habitación y en la sección general de Tour 360°.
