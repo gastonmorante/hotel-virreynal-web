@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import GoogleReviews from './sections/GoogleReviews';
 import ChatConcierge from './components/ChatConcierge';
+import WhatsAppCTA from './components/WhatsAppCTA';
 import IntroLoader from './components/IntroLoader';
 import TourismModal from './components/TourismModal';
 import { MapPin, Phone, Mail, Compass, Star } from 'lucide-react';
@@ -136,6 +138,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Section: Reseñas de Google */}
+        <GoogleReviews />
       </main>
 
       {/* Footer */}
@@ -175,6 +180,7 @@ export default function App() {
               <a href="#inicio" className="hover:text-primary transition-colors">Inicio</a>
               <a href="#habitaciones" className="hover:text-primary transition-colors">Habitaciones</a>
               <a href="#cordoba" className="hover:text-primary transition-colors">Córdoba Pueblo Mágico</a>
+              <a href="#reseñas" className="hover:text-primary transition-colors">Reseñas de Google</a>
               <button onClick={() => setIsTourismModalOpen(true)} className="text-left hover:text-primary transition-colors">Guía Turística</button>
             </div>
           </div>
@@ -183,6 +189,9 @@ export default function App() {
           © {new Date().getFullYear()} Hotel Virreynal. Todos los derechos reservados.
         </div>
       </footer>
+
+      {/* Floating WhatsApp CTA Button (Above Concierge) */}
+      <WhatsAppCTA />
 
       {/* Floating AI Concierge Widget */}
       <ChatConcierge />

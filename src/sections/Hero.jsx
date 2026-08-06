@@ -31,12 +31,22 @@ export default function Hero() {
           />
         </div>
 
-        {/* Pueblo Mágico Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-8 shadow-xl animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <MapPin className="w-4 h-4 text-primary animate-bounce" />
-          <span>Córdoba, Pueblo Mágico</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-          <span className="text-white/70">Veracruz, México</span>
+        {/* Pueblo Mágico Official Logo Badge */}
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/90 backdrop-blur-md border border-white/40 text-secondary shadow-2xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 hover:scale-105 transition-transform">
+          <img
+            src="/images/pueblo-magico.png"
+            alt="Córdoba Pueblo Mágico Logo"
+            className="h-7 sm:h-9 w-auto object-contain"
+          />
+          <span className="h-4 w-[1px] bg-secondary/20" />
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] sm:text-xs uppercase font-bold tracking-wider text-secondary leading-none">
+              Pueblo Mágico
+            </span>
+            <span className="text-[9px] text-charcoal/70 uppercase tracking-widest font-medium mt-0.5">
+              Córdoba, Veracruz
+            </span>
+          </div>
         </div>
 
         {/* Main Title in Serif */}
