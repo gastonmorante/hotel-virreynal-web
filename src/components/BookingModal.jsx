@@ -63,7 +63,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Habitaci�
                 </span>
               </h3>
               <p className="text-xs text-white/70 font-light mt-0.5">
-                Complete el formulario y envíelo directamente a recepción por WhatsApp
+                Complete el formulario para verificar disponibilidad y procesar su solicitud
               </p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Habitaci�
             <div>
               <label className="block text-xs uppercase font-bold tracking-wider text-secondary mb-1.5 flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-primary" />
-                <span>Teléfono / WhatsApp *</span>
+                <span>Teléfono de Contacto *</span>
               </label>
               <input
                 type="tel"
@@ -227,15 +227,15 @@ export default function BookingModal({ isOpen, onClose, initialRoom = 'Habitaci�
           <div className="pt-3 border-t border-secondary/10 flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="text-xs text-charcoal/60 flex items-center gap-1.5">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span>Respuesta inmediata de recepción por WhatsApp</span>
+              <span>Confirmación rápida de recepción y reservaciones</span>
             </span>
 
             <button
               type="submit"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-primary hover:bg-[#a64b31] text-white px-8 py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs shadow-lg hover:shadow-xl transition-all group"
             >
               <Send className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              <span>Enviar Reserva por WhatsApp</span>
+              <span>Enviar Reserva</span>
             </button>
           </div>
         </form>
