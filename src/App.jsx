@@ -7,10 +7,39 @@ import ChatConcierge from './components/ChatConcierge';
 import WhatsAppCTA from './components/WhatsAppCTA';
 import IntroLoader from './components/IntroLoader';
 import TourismModal from './components/TourismModal';
-import { MapPin, Phone, Mail, Compass, Star } from 'lucide-react';
+import RoomTourModal from './components/RoomTourModal';
+import { MapPin, Phone, Mail, Compass, Star, Eye, MessageCircle } from 'lucide-react';
 
 export default function App() {
   const [isTourismModalOpen, setIsTourismModalOpen] = useState(false);
+  const [selectedRoomTour, setSelectedRoomTour] = useState(null);
+
+  const roomsData = [
+    {
+      title: 'Habitación Balcón',
+      tourId: 'VikmFPAFK',
+      desc: 'Espectacular balcón privado con vista panorámica a la Catedral de Córdoba y Plaza de Armas, cama King Size y acabados coloniales de lujo.',
+      price: '$2,450',
+      badge: 'Balcón Panorámico',
+      image: '/images/hero-bg.jpg',
+    },
+    {
+      title: 'Habitación Familiar Pet Friendly',
+      tourId: '74DIxcuqV',
+      desc: 'Amplia suite diseñada para el descanso familiar y la comodidad de tu mascota. Dos camas Queen y espacios integrales adaptados.',
+      price: '$1,950',
+      badge: 'Pet Friendly',
+      image: '/images/cbafoto1.jpg',
+    },
+    {
+      title: 'Master Suite',
+      tourId: 'xZnK_3zrK',
+      desc: 'Máxima distinción virreinal. Cama King Size, área de estar ejecutiva, acabados artesanales y amenidades gourmet de cortesía.',
+      price: '$2,850',
+      badge: 'Máximo Lujo',
+      image: '/images/hero-bg.jpg',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-charcoal font-sans selection:bg-primary/20 selection:text-primary">
@@ -37,40 +66,33 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Suite Virreynal',
-                desc: 'Cama King Size, balcón con vista al centro histórico y acabados en maderas nobles.',
-                price: '$2,450',
-                badge: 'Más Exclusiva',
-              },
-              {
-                title: 'Habitación Colonial Doble',
-                desc: 'Dos camas Queen, amplio espacio de relajación y decoración virreinal auténtica.',
-                price: '$1,850',
-                badge: 'Ideal para Familias',
-              },
-              {
-                title: 'Habitación Ejecutiva',
-                desc: 'Cama Queen, escritorio de trabajo, Wi-Fi de alta velocidad y ambiente silencioso.',
-                price: '$1,450',
-                badge: 'Negocios & Placer',
-              },
-            ].map((room, idx) => (
+            {roomsData.map((room, idx) => (
               <div
                 key={idx}
                 className="bg-white rounded-2xl overflow-hidden border border-secondary/10 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
               >
-                <div className="h-48 bg-secondary/10 relative overflow-hidden">
+                {/* Room Card Image Container */}
+                <div
+                  onClick={() => setSelectedRoomTour(room)}
+                  className="h-56 bg-secondary/10 relative overflow-hidden cursor-pointer group"
+                >
                   <img
-                    src="/images/hero-bg.jpg"
+                    src={room.image}
                     alt={room.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md text-secondary text-xs uppercase font-bold tracking-wider px-4 py-2 rounded-full shadow-lg">
+                      <Compass className="w-4 h-4 text-primary animate-spin-slow" />
+                      <span>Ver Tour 360°</span>
+                    </span>
+                  </div>
                   <span className="absolute top-4 right-4 bg-primary text-white text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full shadow">
                     {room.badge}
                   </span>
                 </div>
+
+                {/* Room Card Details */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="font-serif text-xl font-semibold text-secondary mb-2">
@@ -80,17 +102,35 @@ export default function App() {
                       {room.desc}
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-secondary/10 flex items-center justify-between">
-                    <div>
-                      <span className="text-xs text-charcoal/60 block">Desde</span>
-                      <span className="font-serif text-xl font-bold text-primary">{room.price} <span className="text-xs font-normal text-charcoal/60">/ noche</span></span>
+
+                  <div className="pt-4 border-t border-secondary/10 flex flex-col gap-3">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <span className="text-xs text-charcoal/60 block">Desde</span>
+                        <span className="font-serif text-xl font-bold text-primary">
+                          {room.price} <span className="text-xs font-normal text-charcoal/60">/ noche</span>
+                        </span>
+                      </div>
+
+                      <a
+                        href={`https://wa.me/522717120000?text=Hola,%20quisiera%20reservar%20la%20${encodeURIComponent(room.title)}%20en%20Hotel%20Virreynal`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-secondary hover:bg-primary text-white text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5 fill-white" />
+                        <span>Reservar</span>
+                      </a>
                     </div>
-                    <a
-                      href="#reservar"
-                      className="bg-secondary hover:bg-primary text-white text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-lg transition-colors"
+
+                    {/* Interactive 360° Tour Button */}
+                    <button
+                      onClick={() => setSelectedRoomTour(room)}
+                      className="w-full inline-flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors mt-1"
                     >
-                      Reservar
-                    </a>
+                      <Compass className="w-4 h-4" />
+                      <span>Ver Tour 360° interactivo</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -204,6 +244,12 @@ export default function App() {
       <TourismModal
         isOpen={isTourismModalOpen}
         onClose={() => setIsTourismModalOpen(false)}
+      />
+
+      {/* Interactive Room 360° Tour Modal */}
+      <RoomTourModal
+        room={selectedRoomTour}
+        onClose={() => setSelectedRoomTour(null)}
       />
     </div>
   );
