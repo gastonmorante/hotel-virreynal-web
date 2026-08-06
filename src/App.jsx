@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
+import VirtualTour from './sections/VirtualTour';
 import GoogleReviews from './sections/GoogleReviews';
 import ChatConcierge from './components/ChatConcierge';
 import WhatsAppCTA from './components/WhatsAppCTA';
@@ -138,6 +139,9 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {/* Section: Tour Virtual 360° */}
+        <VirtualTour />
 
         {/* Section: Reseñas de Google */}
         <GoogleReviews />
