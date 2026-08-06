@@ -1,10 +1,8 @@
 import React from 'react';
 import { X, Compass, MessageCircle } from 'lucide-react';
 
-export default function RoomTourModal({ room, onClose }) {
+export default function RoomTourModal({ room, onClose, onOpenBooking }) {
   if (!room) return null;
-
-  const whatsappUrl = `https://wa.me/522717120000?text=Hola,%20quisiera%20reservar%20la%20${encodeURIComponent(room.title)}%20en%20Hotel%20Virreynal`;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-300">
@@ -64,15 +62,16 @@ export default function RoomTourModal({ room, onClose }) {
             >
               Cerrar
             </button>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                onClose();
+                onOpenBooking && onOpenBooking(room.title);
+              }}
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span>Reservar Habitación</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>

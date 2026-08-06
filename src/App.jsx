@@ -8,11 +8,19 @@ import WhatsAppCTA from './components/WhatsAppCTA';
 import IntroLoader from './components/IntroLoader';
 import TourismModal from './components/TourismModal';
 import RoomTourModal from './components/RoomTourModal';
+import BookingModal from './components/BookingModal';
 import { MapPin, Phone, Mail, Compass, Star, Eye, MessageCircle } from 'lucide-react';
 
 export default function App() {
   const [isTourismModalOpen, setIsTourismModalOpen] = useState(false);
   const [selectedRoomTour, setSelectedRoomTour] = useState(null);
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [bookingInitialRoom, setBookingInitialRoom] = useState('Habitación Balcón');
+
+  const handleOpenBooking = (roomName) => {
+    setBookingInitialRoom(roomName || 'Habitación Balcón');
+    setIsBookingModalOpen(true);
+  };
 
   const roomsData = [
     {
@@ -47,7 +55,7 @@ export default function App() {
       <IntroLoader />
 
       {/* Navigation Header */}
-      <Navbar />
+      <Navbar onOpenBooking={handleOpenBooking} />
 
       <main>
         {/* Hero Section */}
@@ -112,15 +120,13 @@ export default function App() {
                         </span>
                       </div>
 
-                      <a
-                        href={`https://wa.me/522717120000?text=Hola,%20quisiera%20reservar%20la%20${encodeURIComponent(room.title)}%20en%20Hotel%20Virreynal`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        onClick={() => handleOpenBooking(room.title)}
                         className="bg-secondary hover:bg-primary text-white text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-lg transition-colors flex items-center gap-1.5"
                       >
                         <MessageCircle className="w-3.5 h-3.5 fill-white" />
                         <span>Reservar</span>
-                      </a>
+                      </button>
                     </div>
 
                     {/* Interactive 360° Tour Button */}
@@ -148,33 +154,30 @@ export default function App() {
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight">
                 Descubre Córdoba, el Corazón de Veracruz
               </h2>
-              <p className="text-background/80 font-light leading-relaxed mb-6">
-                Conocida como la Ciudad de los 30 Caballeros, Córdoba resguarda pasajes históricos fundamentales de México, como la firma de los Tratados de Córdoba.
+              <p className="text-white/80 font-light leading-relaxed mb-6">
+                Fundada en 1618, la heroica ciudad de Córdoba es cuna de la Independencia de México y famosa por sus finas fincas cafetaleras de las Altas Montañas. Hotel Virreynal te sitúa en el epicentro de esta historia viva.
               </p>
-              <p className="text-background/80 font-light leading-relaxed mb-8">
-                Hospedándote en el Hotel Virreynal, estarás a unos pasos de la emblemática Plaza de Armas, la Catedral de la Inmaculada Concepción y las más exclusivas barras de café cordobés.
-              </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 pt-2">
                 <button
                   onClick={() => setIsTourismModalOpen(true)}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-[#a64b31] text-white px-7 py-3.5 rounded-full text-xs uppercase tracking-widest font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-[#a64b31] text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Compass className="w-4 h-4 text-white" />
-                  <span>Planea tu Visita</span>
+                  <MapPin className="w-4 h-4" />
+                  <span>Planea tu visita</span>
                 </button>
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group cursor-pointer" onClick={() => setIsTourismModalOpen(true)}>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
               <img
                 src="/images/cbafoto1.jpg"
-                alt="Catedral de la Inmaculada Concepción, Córdoba Veracruz"
-                className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="Catedral de la Inmaculada Concepción Córdoba"
+                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
-                <span className="bg-white/90 text-secondary text-xs uppercase tracking-widest font-semibold px-4 py-2 rounded-full shadow-lg">
-                  Ver Guía de Atractivos 🗺️
-                </span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+                <p className="text-xs text-white/90 font-light italic">
+                  Catedral de la Inmaculada Concepción frente al Hotel Virreynal
+                </p>
               </div>
             </div>
           </div>
@@ -223,9 +226,9 @@ export default function App() {
             <div className="flex flex-col space-y-2 text-xs">
               <a href="#inicio" className="hover:text-primary transition-colors">Inicio</a>
               <a href="#habitaciones" className="hover:text-primary transition-colors">Habitaciones</a>
-              <a href="#cordoba" className="hover:text-primary transition-colors">Córdoba Pueblo Mágico</a>
-              <a href="#reseñas" className="hover:text-primary transition-colors">Reseñas de Google</a>
-              <button onClick={() => setIsTourismModalOpen(true)} className="text-left hover:text-primary transition-colors">Guía Turística</button>
+              <a href="#tour-virtual" className="hover:text-primary transition-colors">Tour 360°</a>
+              <a href="#cordoba" className="hover:text-primary transition-colors">Córdoba</a>
+              <a href="#reseñas" className="hover:text-primary transition-colors">Reseñas</a>
             </div>
           </div>
         </div>
@@ -250,6 +253,14 @@ export default function App() {
       <RoomTourModal
         room={selectedRoomTour}
         onClose={() => setSelectedRoomTour(null)}
+        onOpenBooking={handleOpenBooking}
+      />
+
+      {/* Interactive Booking Lead Form Modal */}
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        initialRoom={bookingInitialRoom}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Compass, Phone } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -68,13 +68,13 @@ export default function Navbar() {
 
           {/* Action Button: Reservar */}
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href="#reservar"
+            <button
+              onClick={() => onOpenBooking && onOpenBooking()}
               className="inline-flex items-center gap-2 bg-primary hover:bg-[#a64b31] text-white px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-widest shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
             >
               <Calendar className="w-4 h-4" />
               <span>Reservar</span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,14 +108,16 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a
-              href="#reservar"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenBooking && onOpenBooking();
+              }}
               className="mt-4 flex items-center justify-center gap-2 bg-primary hover:bg-[#a64b31] text-white py-3 rounded-full text-sm font-semibold uppercase tracking-widest shadow-md transition-all"
             >
               <Calendar className="w-4 h-4" />
               <span>Reservar Ahora</span>
-            </a>
+            </button>
           </nav>
         </div>
       )}
