@@ -31,12 +31,12 @@ export default function Hero() {
           />
         </div>
 
-        {/* Pueblo Mágico Standalone Logo (Centered below Virreynal logo) */}
+        {/* Pueblo Mágico Standalone Logo (White text, centered below Virreynal logo) */}
         <div className="mb-8 flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <img
             src="/images/pueblo-magico.png"
             alt="Córdoba Pueblo Mágico"
-            className="h-14 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(255,255,255,0.85)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] hover:scale-105 transition-transform duration-300"
+            className="h-14 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_4px_14px_rgba(0,0,0,0.85)] hover:scale-105 transition-transform duration-300"
           />
         </div>
 
