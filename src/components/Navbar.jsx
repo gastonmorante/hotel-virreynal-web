@@ -21,8 +21,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
     { name: 'Habitaciones', href: '#habitaciones' },
-    { name: 'Tour 360°', href: '#tour-virtual' },
     { name: 'Córdoba', href: '#cordoba' },
+    { name: 'Galería', href: '#galeria' },
   ];
 
   return (
