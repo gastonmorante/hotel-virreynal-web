@@ -26,7 +26,7 @@ Información Oficial sobre Hotel Virreynal:
 - Ubicación: En el primer cuadro del centro histórico de Córdoba, Veracruz, frente a la hermosa Plaza de Armas y Catedral.
 - Gastronomía Integrada en el Hotel:
   1. Restaurante Virreynal: Alimentos muy confortables y exquisitos desayunos regionales a precios altamente accesibles.
-  2. Cafetería Tío Manolo: Famosa por sus ricos desayunos y por servir el auténtico café gourmet producido en las Altas Montañas de Veracruz a precios muy accesibles.
+  2. Cafetería Tío Manolo: Famosa por sus ricos desayunos a precios muy accesibles y por servir orgullosamente el distinguido café gourmet Cafiver de las Altas Montañas de Veracruz.
 - Opciones de Hospedaje:
   1. Habitación Balcón ($2,450 MXN/noche): Cama King Size, balcón privado con vista panorámica a la catedral y centro histórico, acabados en maderas nobles.
   2. Habitación Familiar Pet Friendly ($1,950 MXN/noche): Dos camas Queen, ambiente espacioso diseñado para la familia y la comodidad de tu mascota.
