@@ -32,18 +32,18 @@ export default function Hero() {
         </div>
 
         {/* Pueblo Mágico Official Logo Badge */}
-        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/90 backdrop-blur-md border border-white/40 text-secondary shadow-2xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 hover:scale-105 transition-transform">
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-lg border border-white/30 text-white shadow-2xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 hover:bg-white/20 transition-all cursor-default">
           <img
             src="/images/pueblo-magico.png"
             alt="Córdoba Pueblo Mágico Logo"
-            className="h-7 sm:h-9 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-11 w-auto object-contain filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]"
           />
-          <span className="h-4 w-[1px] bg-secondary/20" />
+          <span className="h-5 w-[1px] bg-white/30" />
           <div className="flex flex-col text-left">
-            <span className="text-[10px] sm:text-xs uppercase font-bold tracking-wider text-secondary leading-none">
+            <span className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-white leading-none">
               Pueblo Mágico
             </span>
-            <span className="text-[9px] text-charcoal/70 uppercase tracking-widest font-medium mt-0.5">
+            <span className="text-[9px] sm:text-[10px] text-white/80 uppercase tracking-widest font-light mt-0.5">
               Córdoba, Veracruz
             </span>
           </div>
