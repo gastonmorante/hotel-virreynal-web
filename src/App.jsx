@@ -9,6 +9,7 @@ import IntroLoader from './components/IntroLoader';
 import TourismModal from './components/TourismModal';
 import RoomTourModal from './components/RoomTourModal';
 import BookingModal from './components/BookingModal';
+import GastronomySection from './sections/GastronomySection';
 import { MapPin, Phone, Mail, Compass, Star, Eye, MessageCircle } from 'lucide-react';
 
 export default function App() {
@@ -143,6 +144,9 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {/* Section: Tradición & Gastronomía Virreynal */}
+        <GastronomySection onOpenBooking={handleOpenBooking} />
 
         {/* Section Preview: Córdoba */}
         <section id="cordoba" className="py-24 bg-secondary text-background px-6">

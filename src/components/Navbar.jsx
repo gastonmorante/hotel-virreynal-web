@@ -21,6 +21,7 @@ export default function Navbar({ onOpenBooking }) {
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
     { name: 'Habitaciones', href: '#habitaciones' },
+    { name: 'Gastronomía', href: '#gastronomia' },
     { name: 'Tour 360°', href: '#tour-virtual' },
     { name: 'Córdoba', href: '#cordoba' },
     { name: 'Reseñas', href: '#reseñas' },
