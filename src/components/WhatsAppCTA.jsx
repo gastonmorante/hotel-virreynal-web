@@ -9,16 +9,14 @@ export default function WhatsAppCTA() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 right-6 z-40 bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2.5 border border-white/30 group"
-      aria-label="Contactar por WhatsApp"
+      className="fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-2xl hover:scale-110 border border-white/30 flex items-center justify-center transition-all duration-300 group"
+      aria-label="Reservar por WhatsApp Directo"
+      title="Contactar por WhatsApp"
     >
-      <div className="relative">
-        <MessageCircle className="w-5 h-5 fill-white text-[#25D366] group-hover:rotate-12 transition-transform" />
-        <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-white rounded-full animate-ping" />
+      <div className="relative flex items-center justify-center">
+        <MessageCircle className="w-7 h-7 fill-white text-[#25D366] group-hover:rotate-12 transition-transform" />
+        <span className="absolute -top-1 -right-1 w-3 h-3 bg-white rounded-full animate-ping" />
       </div>
-      <span className="font-sans text-xs font-bold tracking-wide uppercase">
-        WhatsApp Directo
-      </span>
     </a>
   );
 }

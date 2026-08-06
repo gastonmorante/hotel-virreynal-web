@@ -1,35 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Compass, Eye } from 'lucide-react';
 
 export default function VirtualTour() {
   const tourId = "iU0OAl8r2";
   const tourPath = "tours";
-
-  useEffect(() => {
-    // Dynamically load CloudPano script
-    const scriptId = 'cloudpano-share-script';
-    let script = document.getElementById(scriptId);
-
-    if (script) {
-      script.remove();
-    }
-
-    script = document.createElement('script');
-    script.id = scriptId;
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = 'https://app.cloudpano.com/public/shareScript.js';
-    script.setAttribute('data-short', tourId);
-    script.setAttribute('data-path', tourPath);
-    script.setAttribute('data-is-self-hosted', 'false');
-    document.body.appendChild(script);
-
-    return () => {
-      // Clean up script on unmount
-      const existing = document.getElementById(scriptId);
-      if (existing) existing.remove();
-    };
-  }, []);
 
   return (
     <section id="tour-virtual" className="py-24 bg-background border-t border-secondary/10 px-6 relative overflow-hidden">
@@ -44,16 +18,15 @@ export default function VirtualTour() {
             Recorrido Virtual 360°
           </h2>
           <p className="text-charcoal/75 max-w-2xl mx-auto text-sm sm:text-base font-light leading-relaxed">
-            Explora las suites, patios coloniales y rincones emblemáticos del Hotel Virreynal desde la comodidad de tu dispositivo.
+            Explora las suites, patios coloniales y rincones emblemáticos del Hotel Virreynal en 360°.
           </p>
           <div className="w-16 h-0.5 bg-primary mx-auto mt-4" />
         </div>
 
         {/* 360 Tour Frame Container */}
         <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-secondary/15 bg-black">
-          {/* CloudPano Container */}
+          {/* CloudPano Clean iFrame Container */}
           <div id={tourId} className="w-full min-h-[500px] sm:min-h-[600px] relative flex items-center justify-center">
-            {/* Fallback Direct iFrame */}
             <iframe
               src={`https://app.cloudpano.com/${tourPath}/${tourId}`}
               title="Tour Virtual 360 Hotel Virreynal"

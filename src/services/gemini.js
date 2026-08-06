@@ -9,7 +9,7 @@ export async function askConcierge(userMessage, conversationHistory = []) {
 
   if (!apiKey || apiKey.trim() === '' || apiKey.includes('tu_api_key')) {
     return {
-      text: '¡Hola! Soy Don Fernando, el Concierge Virtual de Hotel Virreynal. 👋\n\nPara comunicarme contigo activamente, falta configurar tu **VITE_GEMINI_API_KEY** en Render.com o en tu archivo `.env` local.',
+      text: '¡Hola! Soy Don Manolo, el Concierge Virtual de Hotel Virreynal. 👋\n\nPara comunicarme contigo activamente, falta configurar tu **VITE_GEMINI_API_KEY** en Render.com o en tu archivo `.env` local.',
       isConfigured: false
     };
   }
@@ -18,7 +18,7 @@ export async function askConcierge(userMessage, conversationHistory = []) {
     const ai = new GoogleGenAI({ apiKey });
 
     const systemInstruction = `
-Eres Don Fernando, el Concierge Virtual de "Hotel Virreynal" en Córdoba, Veracruz, México (Pueblo Mágico).
+Eres Don Manolo, el Concierge Virtual de "Hotel Virreynal" en Córdoba, Veracruz, México (Pueblo Mágico).
 Tu trato es sumamente cálido, educado, atento y refinado, propio de un hotel boutique colonial de primer nivel.
 
 Información sobre el Hotel Virreynal:

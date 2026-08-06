@@ -8,7 +8,7 @@ export default function ChatConcierge() {
     {
       id: 1,
       sender: 'bot',
-      text: '¡Sea bienvenido a Hotel Virreynal! 🏨\n\nSoy Don Fernando, su Concierge Virtual. ¿En qué le puedo asistir el día de hoy con su visita a Córdoba, Veracruz?',
+      text: '¡Sea bienvenido a Hotel Virreynal! 🏨\n\nSoy Don Manolo, su Concierge Virtual. ¿En qué le puedo asistir el día de hoy con su visita a Córdoba, Veracruz?',
     },
   ]);
   const [input, setInput] = useState('');
@@ -90,7 +90,7 @@ export default function ChatConcierge() {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="font-serif font-semibold text-base leading-none">
-                    Don Fernando
+                    Don Manolo
                   </h3>
                   <span className="bg-emerald-500/20 text-emerald-300 text-[10px] uppercase font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">
                     IA Active

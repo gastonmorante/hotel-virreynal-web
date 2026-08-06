@@ -18,7 +18,7 @@ export default function GoogleReviews() {
       date: 'Hace 1 mes',
       rating: 5,
       avatarBg: 'bg-emerald-600',
-      text: 'Habitaciones súper amplias, impecables y extremadamente silenciosas a pesar de estar en pleno centro histórico. El Concierge Don Fernando nos recomendó una ruta del café increíble. Sin duda el mejor hotel de Córdoba.',
+      text: 'Habitaciones súper amplias, impecables y extremadamente silenciosas a pesar de estar en pleno centro histórico. El Concierge Don Manolo nos recomendó una ruta del café increíble. Sin duda el mejor hotel de Córdoba.',
       tag: 'Huésped Verificado',
     },
     {
