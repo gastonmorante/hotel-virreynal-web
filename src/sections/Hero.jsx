@@ -26,7 +26,7 @@ export default function Hero() {
       {/* Hero Main Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center pt-28 pb-20 flex flex-col items-center">
         {/* Official Hotel Logo */}
-        <div className="mb-4 animate-in fade-in zoom-in-95 duration-1000">
+        <div className="mb-4 flex justify-center items-center animate-in fade-in zoom-in-95 duration-1000">
           <img
             src="/images/logo.png"
             alt="Hotel Virreynal Córdoba"
@@ -34,12 +34,12 @@ export default function Hero() {
           />
         </div>
 
-        {/* Pueblo Mágico Standalone Logo (White text, centered below Virreynal logo) */}
-        <div className="mb-8 flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+        {/* Pueblo Mágico Standalone Logo (White text, 100% symmetric and centered) */}
+        <div className="mb-8 flex justify-center items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
           <img
             src="/images/pueblo-magico.png"
             alt="Córdoba Pueblo Mágico"
-            className="h-14 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_4px_14px_rgba(0,0,0,0.85)] hover:scale-105 transition-transform duration-300"
+            className="h-16 sm:h-24 md:h-28 w-auto object-contain filter drop-shadow-[0_4px_14px_rgba(0,0,0,0.85)] hover:scale-105 transition-transform duration-300 mx-auto"
           />
         </div>
 
