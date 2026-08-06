@@ -3,18 +3,21 @@ import { MapPin, ChevronDown, Compass, Star, Play, X } from 'lucide-react';
 
 export default function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoId = "UpxqAN2ofLY";
+  const videoSrc = "/videos/hotel-virreynal.mp4";
 
   return (
     <section id="inicio" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-secondary">
-      {/* YouTube Video Background Container */}
+      {/* Native HTML5 Video Background Container */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <iframe
-          className="w-full h-full min-w-[100vw] min-h-[56.25vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-125 filter brightness-75 contrast-110 pointer-events-none"
-          src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&autohide=1&modestbranding=1&enablejsapi=1`}
-          title="Video Corporativo Hotel Virreynal"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover filter brightness-75 contrast-110"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
         {/* Overlay Gradients for Legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-black/40 to-black/60" />
         <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]" />
@@ -120,15 +123,16 @@ export default function Hero() {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            {/* Modal Video Embed */}
+            {/* Modal Video Player */}
             <div className="relative w-full aspect-video bg-black">
-              <iframe
+              <video
+                controls
+                autoPlay
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
-                title="Video Corporativo Hotel Virreynal"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              >
+                <source src={videoSrc} type="video/mp4" />
+                Tu navegador no soporta la reproducción de video HTML5.
+              </video>
             </div>
           </div>
         </div>
