@@ -122,11 +122,11 @@ export default function App() {
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group">
               <img
-                src="/images/hero-bg.jpg"
-                alt="Córdoba Veracruz Centro Histórico"
-                className="w-full h-[400px] object-cover"
+                src="/images/cbafoto1.jpg"
+                alt="Catedral de la Inmaculada Concepción, Córdoba Veracruz"
+                className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
